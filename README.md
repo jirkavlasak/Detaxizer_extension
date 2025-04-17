@@ -28,13 +28,23 @@ Here below is process to be add as described earlier in IMPLEMETING TAXA REPORT 
         ch_taxa_html = TAXA_REPORT.out.html_report
 
 ## WORK ENVIRONMENT
+I recommend to keep all samples, sample sheets, workdir and outdir in the same directory for better manipulation. For example I obtained 24 human samples and 25th mouse sample. For each sample I created folder named as sample. Inside that folder I kept sample sheet, sample data, workdir and outdir, below is simple schema for better visualization. 
+
+MAIN_FOLDER
+ SAMPLE1
+  samplesheet.csv
+  sample.fastq.gz
+  WORKDIR
+  OUTDIR
+ SAMPLE2
+ ... 
 
 ## LIMITATIONS
 Only limitations of TAXA_REPORT is that you have to use -profile conda. Due to using multiple python libraries in taxa_report.py script you cannot use docker or singularity. I decide to keep with conda, beacuse it is widely use and well known profile for many users and should not make any troubles for new comming users.
 
-## LAUCHING PIPELINE
+## LAUNCHING PIPELINE
 
-## LAUCHING PIPELINE WITH MULTIPLE SAMPLES
+## LAUNCHING PIPELINE WITH MULTIPLE SAMPLES
 
 ## KRAKEN2 DATABASES
 
