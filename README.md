@@ -34,15 +34,14 @@ Here below is process to be add as described earlier in IMPLEMETING TAXA REPORT 
 ## WORK ENVIRONMENT
 I recommend to keep all samples, sample sheets, workdir and outdir in the same directory for better manipulation. For example I obtained 24 human samples and 25th mouse sample. For each sample I created folder named as sample. Inside that folder I kept sample sheet, sample data, workdir and outdir, below is simple schema for better visualization. 
 
-<pre> ``` MAIN_FOLDER --> SAMPLE1 samplesheet.csv sample.fastq.gz WORKDIR OUTDIR SAMPLE2 ... ``` </pre>
 
-MAIN_FOLDER -->
- SAMPLE1
-  samplesheet.csv
-  sample.fastq.gz
-  WORKDIR
-  OUTDIR
- SAMPLE2
+MAIN_FOLDER\
+ SAMPLE1\
+  samplesheet.csv\
+  sample.fastq.gz\
+  WORKDIR\
+  OUTDIR\
+ SAMPLE2\
  ... 
 
 ## LIMITATIONS
