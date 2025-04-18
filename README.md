@@ -42,8 +42,82 @@ MAIN_FOLDER
 ## LIMITATIONS
 Only limitations of TAXA_REPORT is that you have to use -profile conda. Due to using multiple python libraries in taxa_report.py script you cannot use docker or singularity. I decide to keep going with conda, beacuse it is widely use and wellknown profiler for many users and should not make any troubles for new comming users.
 
-## LAUNCHING PIPELINE
-
-
 ## KRAKEN2 DATABASES
+Kraken2 works with databases we can use prepared databases or create our own databases
+
+### PREPARED DATABASE
+I highly recommned to use prepared databse called as 'standard', it does contain enough taxons and was created for fast classification, it does only take under 8GB space on your disk. If you think you would benefit more using bigger databse you can download other official databes that kraken2 supports (visit link for more details https://benlangmead.github.io/aws-indexes/k2 ), while using standard databse you do not even have to use parameter --kraken2db path\to\db, because the pipeline deafulty choose standard databse if not specified otherwise. It needs to be said, that prepared databse usually contain data for bacteria, viruses, archaea and human.
+
+### CUSTOM DATABSE
+With using command kraken2-build, tool will rpovide you will samll description of possible parameters you can use to build the database.
+
+Must select a task option.
+Usage: kraken2-build [task option] [options]
+
+Task options (exactly one must be selected):
+  --download-taxonomy        Download NCBI taxonomic information
+  --download-library TYPE    Download partial library
+                             (TYPE = one of "archaea", "bacteria", "plasmid",
+                             "viral", "human", "fungi", "plant", "protozoa",
+                             "nr", "nt", "UniVec", "UniVec_Core")
+  --special TYPE             Download and build a special database
+                             (TYPE = one of "greengenes", "silva", "rdp")
+  --add-to-library FILE      Add FILE to library
+  --build                    Create DB from library
+                             (requires taxonomy d/l'ed and at least one file
+                             in library)
+  --clean                    Remove unneeded files from a built database
+  --standard                 Download and build default database
+  --help                     Print this message
+  --version                  Print version information
+
+Options:
+  --db NAME                  Kraken 2 DB name (mandatory except for
+                             --help/--version)
+  --threads #                Number of threads (def: 1)
+  --kmer-len NUM             K-mer length in bp/aa (build task only;
+                             def: 35 nt, 15 aa)
+  --minimizer-len NUM        Minimizer length in bp/aa (build task only;
+                             def: 31 nt, 12 aa)
+  --minimizer-spaces NUM     Number of characters in minimizer that are
+                             ignored in comparisons (build task only;
+                             def: 7 nt, 0 aa)
+  --protein                  Build a protein database for translated search
+  --no-masking               Used with --standard/--download-library/
+                             --add-to-library to avoid masking low-complexity
+                             sequences prior to building; masking requires
+                             dustmasker or segmasker to be installed in PATH,
+                             which some users might not have.
+  --max-db-size NUM          Maximum number of bytes for Kraken 2 hash table;
+                             if the estimator determines more would normally be
+                             needed, the reference library will be downsampled
+                             to fit. (Used with --build/--standard/--special)
+  --use-ftp                  Use FTP for downloading instead of RSYNC; used with
+                             --download-library/--download-taxonomy/--standard.
+  --skip-maps                Avoids downloading accession number to taxid maps,
+                             used with --download-taxonomy.
+  --load-factor FRAC         Proportion of the hash table to be populated
+                             (build task only; def: 0.7, must be
+                             between 0 and 1).
+  --fast-build               Do not require database to be deterministically
+                             built when using multiple threads.  This is faster,
+                             but does introduce variability in minimizer/LCA
+                             pairs.  Used with --build and --standard options.
+                             
+First step to create databse is to use command --download-taxony path\to\databse (this is were your new custom database will be created and how it will be names). 
+Next process is up to you, at first you can use  
+--download-library TYPE --db path\to\database   
+                            Download partial library
+                             (TYPE = one of "archaea", "bacteria", "plasmid",
+                             "viral", "human", "fungi", "plant", "protozoa",
+                             "nr", "nt", "UniVec", "UniVec_Core")
+Provided partial libraries are pretty huge so be ready to have a lot of free space on your disk.
+
+If you want to add specific specices you can download genomic fasta files (I recommend form NCBI site. because fasta files there have already the right headers that kraken2 requiers). If you have your fasta files ready you cann add them to your library using --add-to-library FILE --db path\to\database
+
+After adding all your fasta files to database you can finally commit last step. Build databse using kraken2-build --build --db path\to\database. After finishing you can clean (delete not more needed files in your database) to free up some space on your disk using kraken2-build --clean --db path\to\database.
+
+## USEFUL SCRIPTS FOR SIMPLIFYING WORK
+
+
 
