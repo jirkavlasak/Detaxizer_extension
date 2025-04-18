@@ -8,8 +8,9 @@ Link to official site of Detaxizer pipeline: https://nf-co.re/detaxizer/1.0.0/
 ### You can modify taxa_report.py to meet your criteria
 Main focus here is on taxa_report.py and taxa_report.nf. These scripts are new additional process for Detaxizer pipeline. Script take input from kraken2 classification report and original name of sample given in sample sheet. Scripts return phylogenetic tree of classifed taxons in kraken2 classification report and HTML report page with summary of that classification. Note that taxa_report.py filters lines where taxons had zero values at classification, sorts lines by percentage values and trimms taxons that their classification value was to loo to considre tham as rightfully classifed and are most likley some kind of buzz. 
 <p align="center">
-  <img src="![image](https://github.com/user-attachments/assets/16ae2d6b-abde-4fb2-909c-6c3010def4e3)" alt="Popis obrázku" width="300"/>
+  <img src="https://github.com/user-attachments/assets/16ae2d6b-abde-4fb2-909c-6c3010def4e3" alt="Popis obrázku" width="300"/>
 </p>
+
 
 
 ## CONFIGURATION
