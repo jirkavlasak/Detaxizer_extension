@@ -1,7 +1,7 @@
 # Detaxizer_extension
 ## Welcome to my own Detaxizer extension
 This project is based on my bachelor thesis, where my goal was to find sufficent nf-core based pipeline, which is possible to edit and implement new porcesses, specially to find contaminations in sequacing data adn create HTML page report about sample.
-All files you can find here are not part of the original Detaxizer pipeline, but will help you to implement my process to pipeline and I will provide here to you a little guid how to do so.
+All files you can find here are not part of the original Detaxizer pipeline, but will help you to implement new process to the pipeline and I will provide here to you a little guid how to do so.
 But first, please be sure your Detaxize pipeline is installed correctly.
 
 ## ABOUT
@@ -40,11 +40,10 @@ MAIN_FOLDER
  ... 
 
 ## LIMITATIONS
-Only limitations of TAXA_REPORT is that you have to use -profile conda. Due to using multiple python libraries in taxa_report.py script you cannot use docker or singularity. I decide to keep with conda, beacuse it is widely use and well known profile for many users and should not make any troubles for new comming users.
+Only limitations of TAXA_REPORT is that you have to use -profile conda. Due to using multiple python libraries in taxa_report.py script you cannot use docker or singularity. I decide to keep going with conda, beacuse it is widely use and wellknown profiler for many users and should not make any troubles for new comming users.
 
 ## LAUNCHING PIPELINE
 
-## LAUNCHING PIPELINE WITH MULTIPLE SAMPLES
 
 ## KRAKEN2 DATABASES
 
