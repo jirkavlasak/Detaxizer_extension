@@ -125,6 +125,12 @@ After adding all your fasta files to database you can finally commit last step. 
 ## USEFUL SCRIPTS FOR SIMPLIFYING WORK
 Here I will list usefull scripts that may help while working with Detaxizer pipeline
 ### CREATE WORKING DIRECTORIES
+Use create_directories.sh to create working environment described earlier. Input parameter is path to your samples. 
+It is important to do chomd +x chomd create_directories.sh to propperly run script on your machine.
+
+### DOWNLOAD FASTA FILES FOR CUSTOM DATABASE
+### BUILDING CUSTOM DATABSE
+### LAUNCHING PIPELINE WITH MULTIPLESAMPLES
 
 
 
