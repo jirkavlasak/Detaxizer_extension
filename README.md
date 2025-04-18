@@ -1,5 +1,4 @@
 # Detaxizer_extension
-## Welcome to my own Detaxizer extension
 This project is based on my bachelor thesis, where my goal was to find sufficent nf-core based pipeline, which is possible to edit and implement new porcesses, specially to find contaminations in sequacing data adn create HTML page report about sample.
 All files you can find here are not part of the original Detaxizer pipeline, but will help you to implement new process to the pipeline and I will provide here to you a little guid how to do so.
 But first, please be sure your Detaxize pipeline is installed correctly.
@@ -8,6 +7,8 @@ Link to official site of Detaxizer pipeline: https://nf-co.re/detaxizer/1.0.0/
 ## ABOUT
 ### You can modify taxa_report.py to meet your criteria
 Main focus here is on taxa_report.py and taxa_report.nf. These scripts are new additional process for Detaxizer pipeline. Script take input from kraken2 classification report and original name of sample given in sample sheet. Scripts return phylogenetic tree of classifed taxons in kraken2 classification report and HTML report page with summary of that classification. Note that taxa_report.py filters lines where taxons had zero values at classification, sorts lines by percentage values and trimms taxons that their classification value was to loo to considre tham as rightfully classifed and are most likley some kind of buzz. 
+![image](https://github.com/user-attachments/assets/16ae2d6b-abde-4fb2-909c-6c3010def4e3)
+
 
 
 ## CONFIGURATION
