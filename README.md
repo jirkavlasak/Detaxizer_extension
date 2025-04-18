@@ -129,6 +129,11 @@ Use create_directories.sh to create working environment described earlier. Input
 It is important to do chomd +x create_directories.sh to propperly run script on your machine.
 
 ### DOWNLOAD FASTA FILES FOR CUSTOM DATABASE
+If you decided to build your own custom database, I recommend to use this scirpt 'downlaod_fenmos.sh', it get fasta files for specific TAXON ID form NCBI genom data sets. You have to change list of TAXON IDs to get your wanted taxons.Image below shows what you should change to obtain your wanted fasta files. Input parameter is path to the folder you want to store fasta files.
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/376e1fb8-c89d-47f3-b6f0-c0a178c38c84" alt="Popis obrázku" width="300"/>
+</p>
+ 
 ### BUILDING CUSTOM DATABSE
 ### LAUNCHING PIPELINE WITH MULTIPLESAMPLES
 
