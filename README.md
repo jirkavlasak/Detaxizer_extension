@@ -123,6 +123,8 @@ If you want to add specific specices you can download genomic fasta files (I rec
 After adding all your fasta files to database you can finally commit last step. Build databse using kraken2-build --build --db path\to\database. After finishing you can clean (delete not more needed files in your database) to free up some space on your disk using kraken2-build --clean --db path\to\database.
 
 ## USEFUL SCRIPTS FOR SIMPLIFYING WORK
+Here I will list usefull scripts that may help while working with Detaxizer pipeline
+### CREATE WORKING DIRECTORIES
 
 
 
